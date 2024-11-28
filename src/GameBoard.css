@@ -1,0 +1,53 @@
+#root {
+    --clr-white: #fff0f0;
+    --clr-gray: #d2d2d2;
+    --clr-black: #0C0910;
+    --clr-red: #ff2222;
+    --clr-blue: #1f2b31;
+  
+    /* players */
+    --clr-skyblue: 0, 172, 242;
+    --clr-orange: 255, 189, 0;
+    --hover-opacity: 0.8;
+    --clr-skyblue-hover: rgba(0, 172, 242, var(--hover-opacity));
+    --clr-orange-hover: rgba(255, 189, 0, var(--hover-opacity));
+  }
+  
+  .game-board {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    border: 5px dashed var(--clr-skyblue);
+  }
+  
+  .game-board__cell {
+    background-color: var(--clr-white);
+    cursor: pointer;
+  }
+
+  .game-board__cell--playerX,
+  .game-board__cell--playerO {
+    cursor: not-allowed;
+  }
+
+  .game-board__cell--playerX {
+    background-color: var(--clr-orange);
+  }
+
+  .game-board__cell--playerO {
+    background-color: var(--clr-skyblue);
+  }
+  
+  .player__active--playerX .game-board__cell:hover {
+    outline: 3px dotted var(--clr-orange-hover);
+    outline-offset: 3px;
+  }
+  
+  .player__active--playerO .game-board__cell:hover {
+    outline: 3px dotted var(--clr-skyblue-hover);
+    outline-offset: 3px;
+  } 
+  
